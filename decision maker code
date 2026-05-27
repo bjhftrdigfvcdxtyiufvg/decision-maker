@@ -1,0 +1,28 @@
+import numpy as np
+def decision_maker():
+    print("enter the decision to make ")
+    ques=input()
+    par=np.array()
+    thres=1.5
+    for x in range(0,5):
+        print("enter the parameter ",x+1)
+        par[x]=input()
+    weight=np.array()
+    for y in par:
+        print("enter the weight for parameter ",y)
+        weight[y]=float(input())
+    score=np.array()
+    for z in par:
+        print("enter the 1 for yes and 0 for no for parameter ",z)
+        score[z]=float(input())
+    for a,b in zip(score,weight):
+        print("the score for parameter ",a," is ",score[a]*weight[a])
+    total_score=np.sum(score*weight)
+    if total_score>thres:
+        print("the decision is yes")
+    else:
+        print("the decision is no")    
+decision_maker()   
+
+
+
